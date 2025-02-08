@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -60,10 +61,12 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+     <Compile Include="Assets\Scripts\LoginManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+     <Compile Include="Assets\Scripts\RegisterManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
@@ -75,9 +78,11 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
-     <Compile Include="Assets\Scripts\LoginManager.cs" />
-     <Compile Include="Assets\Scripts\RegisterManager.cs" />
+     <Compile Include="Assets\Scripts\NetworkingDataScriptableObject.cs" />
+     <Compile Include="Assets\Scripts\DTO\User.cs" />
+     <Compile Include="Assets\Scripts\DTO\AuthToken.cs" />
+     <Compile Include="Assets\Scripts\DTO\UserDto.cs" />
+     <Compile Include="Assets\Scripts\DTO\RegisterUserDto.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
@@ -96,6 +101,7 @@
      <Folder Include="Assets\Scenes" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Scripts\DTO" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -352,6 +358,9 @@
      </Reference>
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\Users\Jaume\UnityProjects\demo_login\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.48f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -727,6 +736,12 @@
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>C:\Users\Jaume\UnityProjects\demo_login\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Advertisements">
+     <HintPath>C:\Users\Jaume\UnityProjects\demo_login\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Advertisements.Editor">
+     <HintPath>C:\Users\Jaume\UnityProjects\demo_login\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
