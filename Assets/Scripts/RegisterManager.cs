@@ -56,6 +56,7 @@ public class RegisterManager : MonoBehaviour
 
     public void register()
     {
+        Debug.Log("Register...");
         UnityWebRequest httpRequest = new UnityWebRequest();
         httpRequest.method = UnityWebRequest.kHttpVerbPOST;
         httpRequest.url = loginDataSO.apiUrl + "/Auth/Register";
@@ -91,8 +92,6 @@ public class RegisterManager : MonoBehaviour
         
         string jsonResponse = httpRequest.downloadHandler.text;
 
-        // UserDTO registeredUser = new UserDTO();
-        // registeredUser = JsonConvert.DeserializeObject<UserDTO>(jsonResponse);
         UserDTO registeredUser = JsonConvert.DeserializeObject<UserDTO>(jsonResponse);
         
         Debug.Log("Creat usuari: " + registeredUser.Id + " " + registeredUser.Nom 

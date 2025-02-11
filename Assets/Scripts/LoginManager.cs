@@ -66,10 +66,14 @@ public class LoginManager : MonoBehaviour
     {
         if (usuari == null)
         {
-            UnityWebRequest httpClient = new UnityWebRequest(loginDataSO.apiUrl + "/Auth/Login", UnityWebRequest.kHttpVerbPOST);
-
+            UnityWebRequest httpClient = new UnityWebRequest();
+            httpClient.method = UnityWebRequest.kHttpVerbPOST;
+            httpClient.url = loginDataSO.apiUrl + "/Auth/Login";
+            httpClient.SetRequestHeader("Content-Type", "application/json");
+            httpClient.SetRequestHeader("Accept", "application/json");
+            
             RegisterUserDTO loginDataUsuari = new RegisterUserDTO();
-            //loginDataUsuari.Nom = "jaumecf"; // IMPORTANT! Can NOT be null!
+            loginDataUsuari.Nom = "prova"; // IMPORTANT! Can NOT be null!
             loginDataUsuari.Email = emailInput.text;
             loginDataUsuari.Password = passwordInput.text;
             
@@ -79,8 +83,6 @@ public class LoginManager : MonoBehaviour
             httpClient.uploadHandler = new UploadHandlerRaw(dataToSend);
             httpClient.downloadHandler = new DownloadHandlerBuffer();
     
-            httpClient.SetRequestHeader("Content-Type", "application/json");
-            httpClient.SetRequestHeader("Accept", "*/*");
     
             yield return httpClient.SendWebRequest();
     
@@ -91,7 +93,6 @@ public class LoginManager : MonoBehaviour
     
             string jsonResponse = httpClient.downloadHandler.text;
             
-            //authTokenDto = JsonUtility.FromJson<AuthTokenDto>(jsonResponse);
             AuthTokenDto authTokenDto = JsonConvert.DeserializeObject<AuthTokenDto>(jsonResponse);
             loginDataSO.token = authTokenDto.token;
             Debug.Log(authTokenDto.token);
