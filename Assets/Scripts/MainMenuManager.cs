@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject loginPanel;
     public GameObject registerPanel;
+    public GameObject classificationPanel;
     void Start()
     {
         mainMenuPanel.SetActive(true);
@@ -43,5 +44,13 @@ public class MainMenuManager : MonoBehaviour
         mainMenuPanel.SetActive(true);
         loginPanel.SetActive(false);
         registerPanel.SetActive(false);
+    }
+
+    public void enableClassification()
+    {
+        classificationPanel.SetActive(true);
+        loginPanel.SetActive(false);
+        registerPanel.SetActive(false);
+        mainMenuPanel.SetActive(false);
     }
 }

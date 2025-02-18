@@ -13,6 +13,7 @@ public class RegisterManager : MonoBehaviour
 {
     EventSystem eventSystem;
     public NetworkingDataScriptableObject loginDataSO;
+    public GameObject mainMenuManager;
     public Selectable firstInput;
     public Button registerButton, backButton;
     public TMP_InputField nomInput, emailInput, passwordInput;
@@ -96,5 +97,6 @@ public class RegisterManager : MonoBehaviour
         
         Debug.Log("Creat usuari: " + registeredUser.Id + " " + registeredUser.Nom 
                   + " " + registeredUser.Email);
+        mainMenuManager.GetComponent<MainMenuManager>().enableClassification();
     }
 }

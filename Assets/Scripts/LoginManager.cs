@@ -13,6 +13,7 @@ public class LoginManager : MonoBehaviour
 {
     EventSystem eventSystem;
     public NetworkingDataScriptableObject loginDataSO;
+    public GameObject mainMenuManager;
     public Selectable firstInput;
     public Button loginButton, backButton;
     public TMP_InputField emailInput, passwordInput;
@@ -97,6 +98,7 @@ public class LoginManager : MonoBehaviour
             loginDataSO.token = authTokenDto.token;
             Debug.Log(authTokenDto.token);
             httpClient.Dispose();
+            mainMenuManager.GetComponent<MainMenuManager>().enableClassification();
         }
         
     }
